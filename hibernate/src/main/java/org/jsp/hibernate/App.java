@@ -1,9 +1,8 @@
 package org.jsp.hibernate;
 
+
 import org.hibernate.cfg.Configuration;
-
 import org.hibernate.Transaction;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -18,9 +17,11 @@ public class App
     	s.setMobileno(123567891);
     	s.setBranch("cse");
     	
-    	Configuration con = new Configuration().configure().addAnnotatedClass(Student.class);
+    	Configuration con = new Configuration().configure("NewFile.xml").addAnnotatedClass(Student.class);
+    	
     	
     	SessionFactory sf  =con.buildSessionFactory();
+    	
     	Session session = sf.openSession();
     	
     	Transaction tx = session.beginTransaction();
